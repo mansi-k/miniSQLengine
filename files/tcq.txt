@@ -1,0 +1,1 @@
+select D, B from table1, table2 where A=D and A>1
