@@ -1,1 +1,2 @@
 select D, B from table1, table2 where A=D and A>1
+select A, max(D), min(B) from table1, table2 group by A where A>1
