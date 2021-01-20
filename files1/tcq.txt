@@ -1,0 +1,15 @@
+select D, B from table1, table2 where A=D and A>1
+
+select A, max(D), min(B) from table1, table2 group by A where A>1
+
+select * from table1, table2, table3 where a=e and d=f;
+
+select * from table1, table2, table3 where F>=33 and A>=80 and D>=70;
+
+select max(a),min(f),count(*),b,e from table1, table2, table3 where F>=33 and A>=80 and D>=70 group by b,e;
+
+select max(a),min(f),sum(g),avg(g),b,e from table1, table2, table3 where F>=33 and A>=80 and D>=70 group by b,e;
+
+select distinct e,sum(g) from table1, table2, table3 where F>=33 and A>=80 and D>=70 group by b,e;
+
+select g,max(a),d from table1, table2, table3 where F>=33 and A>=80 and D<=22 group by d,g;
