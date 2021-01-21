@@ -2,6 +2,7 @@ import csv
 import sqlparse as sp
 from sqlparse.sql import IdentifierList, Identifier, Where, Comparison
 from sqlparse.tokens import Keyword, DML, Newline, Whitespace, Text, Token
+import argparse
 
 '''Data loading functions'''
 
@@ -464,8 +465,13 @@ if __name__ == "__main__":
     tables_meta,tables_list = extract_metadata()
     tables_data_byrows = extract_csvdata_byrows(tables_list)
 #     print(tables_data_byrows)
-
-    qry_input = input().strip().lower()
+    
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--query', help="Provide SQL Query", type=str)
+    args=parser.parse_args()
+    qry_input = args.query.strip().lower()
+#     print(qry_input)
+#     qry_input = input().strip().lower()
     # qry_input = "select A, max(b) from table1 where a >= 640 and b > 311;".lower()
     if qry_input[-1] != ';':
         print("Semicolon missing")
